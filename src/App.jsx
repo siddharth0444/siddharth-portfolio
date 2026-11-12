@@ -9,6 +9,13 @@ const learningAreas = [
   { number: '04', name: 'Software engineering', focus: 'Foundations' },
 ]
 
+const skillGroups = [
+  { number: '01', name: 'Programming', symbol: '</>', technologies: ['Python', 'JavaScript'] },
+  { number: '02', name: 'Frontend', symbol: '◧', technologies: ['React', 'HTML', 'CSS'] },
+  { number: '03', name: 'Tools', symbol: '⌘', technologies: ['Git', 'GitHub', 'VS Code'] },
+  { number: '04', name: 'AI & Data', symbol: '✳', technologies: ['AI applications', 'Pandas', 'Scikit-learn'] },
+]
+
 function ArrowIcon({ diagonal = false }) {
   return (
     <svg
@@ -35,6 +42,7 @@ function App() {
 
           <nav className="site-nav" aria-label="Main navigation">
             <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
             <a className="site-nav__contact" href={githubUrl} target="_blank" rel="noreferrer">
               Contact <ArrowIcon diagonal />
@@ -80,7 +88,7 @@ function App() {
         <footer className="hero__footer" aria-label="Page footer">
           <span>Always learning. Building steadily.</span>
           <a href="#about">Scroll to explore <span aria-hidden="true">↓</span></a>
-          <span className="hero__footer-index">01 <i /> 02</span>
+          <span className="hero__footer-index">01 <i /> 03</span>
         </footer>
       </section>
 
@@ -123,7 +131,45 @@ function App() {
         </div>
         <div className="about-section__footer" aria-hidden="true">
           <span>Curiosity → practice → understanding</span>
-          <span>02 <i /> 02</span>
+          <span>02 <i /> 03</span>
+        </div>
+      </section>
+
+      <section className="skills-section" id="skills" aria-labelledby="skills-title">
+        <div className="skills-section__inner">
+          <div className="skills-section__heading">
+            <p className="section-label"><span>03</span> / Skills &amp; technologies</p>
+            <div className="skills-section__intro">
+              <h2 className="skills-section__title" id="skills-title">
+                A toolkit <span>in progress.</span>
+              </h2>
+              <p className="skills-section__description">
+                Technologies I’m learning and working with as I explore software development.
+              </p>
+            </div>
+          </div>
+
+          <div className="skills-grid">
+            {skillGroups.map((group) => (
+              <article className="skill-card" key={group.number}>
+                <div className="skill-card__topline">
+                  <span className="skill-card__number">{group.number} / 04</span>
+                  <span className="skill-card__symbol" aria-hidden="true">{group.symbol}</span>
+                </div>
+                <h3 className="skill-card__title">{group.name}</h3>
+                <ul className="skill-card__technologies">
+                  {group.technologies.map((technology) => (
+                    <li key={technology}>{technology}</li>
+                  ))}
+                </ul>
+                <span className="skill-card__corner" aria-hidden="true" />
+              </article>
+            ))}
+          </div>
+        </div>
+        <div className="skills-section__footer" aria-hidden="true">
+          <span>Learn it. Try it. Understand it.</span>
+          <span>03 <i /> 03</span>
         </div>
       </section>
     </main>
