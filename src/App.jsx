@@ -29,6 +29,77 @@ function ArrowIcon({ diagonal = false }) {
   )
 }
 
+function SupportIQPreview() {
+  return (
+    <div
+      className="project-preview"
+      role="img"
+      aria-label="Illustrative dashboard preview showing ticket analysis, category prediction, sentiment, and insights"
+    >
+      <div className="project-preview__window">
+        <div className="project-preview__chrome">
+          <span className="project-preview__lights"><i /><i /><i /></span>
+          <span>supportiq <i>/</i> workspace</span>
+          <span className="project-preview__preview-label">UI CONCEPT</span>
+        </div>
+
+        <div className="project-preview__app">
+          <aside className="project-preview__sidebar">
+            <span className="project-preview__brand">si<span>.</span></span>
+            <span className="project-preview__side-icon project-preview__side-icon--active" />
+            <span className="project-preview__side-icon" />
+            <span className="project-preview__side-icon" />
+            <span className="project-preview__side-avatar">S</span>
+          </aside>
+
+          <div className="project-preview__content">
+            <div className="project-preview__heading">
+              <div>
+                <span>SUPPORT ANALYTICS</span>
+                <strong>Ticket intelligence</strong>
+              </div>
+              <span className="project-preview__date">WORKSPACE <i>↗</i></span>
+            </div>
+
+            <div className="project-preview__signals">
+              <div className="project-preview__signal">
+                <span>01 / CATEGORY PREDICTION</span>
+                <div className="project-preview__signal-graphic project-preview__signal-graphic--nodes" aria-hidden="true">
+                  <i /><i /><i /><b /><b />
+                </div>
+                <strong>Ticket classification</strong>
+              </div>
+              <div className="project-preview__signal">
+                <span>02 / SENTIMENT</span>
+                <div className="project-preview__signal-graphic project-preview__signal-graphic--sentiment" aria-hidden="true">
+                  <i /><i /><i /><i /><i /><i /><i /><i /><i />
+                </div>
+                <strong>Sentiment analysis</strong>
+              </div>
+            </div>
+
+            <div className="project-preview__insights">
+              <div className="project-preview__insights-copy">
+                <span>03 / INTERACTIVE DASHBOARD</span>
+                <strong>Support insights</strong>
+                <small>Patterns, surfaced from ticket data.</small>
+              </div>
+              <div className="project-preview__chart" aria-hidden="true">
+                <span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span />
+                <i />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="project-preview__caption">
+        <span><i /> Illustrative product preview</span>
+        <span>Ticket → insight</span>
+      </div>
+    </div>
+  )
+}
+
 function App() {
   return (
     <main className="portfolio-shell">
@@ -43,6 +114,7 @@ function App() {
           <nav className="site-nav" aria-label="Main navigation">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
             <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
             <a className="site-nav__contact" href={githubUrl} target="_blank" rel="noreferrer">
               Contact <ArrowIcon diagonal />
@@ -88,7 +160,7 @@ function App() {
         <footer className="hero__footer" aria-label="Page footer">
           <span>Always learning. Building steadily.</span>
           <a href="#about">Scroll to explore <span aria-hidden="true">↓</span></a>
-          <span className="hero__footer-index">01 <i /> 03</span>
+          <span className="hero__footer-index">01 <i /> 04</span>
         </footer>
       </section>
 
@@ -131,7 +203,7 @@ function App() {
         </div>
         <div className="about-section__footer" aria-hidden="true">
           <span>Curiosity → practice → understanding</span>
-          <span>02 <i /> 03</span>
+          <span>02 <i /> 04</span>
         </div>
       </section>
 
@@ -169,7 +241,70 @@ function App() {
         </div>
         <div className="skills-section__footer" aria-hidden="true">
           <span>Learn it. Try it. Understand it.</span>
-          <span>03 <i /> 03</span>
+          <span>03 <i /> 04</span>
+        </div>
+      </section>
+
+      <section className="projects-section" id="projects" aria-labelledby="projects-title">
+        <div className="projects-section__inner">
+          <div className="projects-section__heading">
+            <p className="section-label"><span>04</span> / Selected work</p>
+            <h2 className="projects-section__title" id="projects-title">
+              Things I’ve built.<br />
+              <span>Things I’m learning.</span>
+            </h2>
+            <p className="projects-section__intro">
+              This project is a practical way to apply what I’m learning in programming and software engineering—and explore how the pieces fit together.
+            </p>
+          </div>
+
+          <article className="project-feature" aria-labelledby="supportiq-title">
+            <div className="project-feature__visual">
+              <div className="project-feature__visual-label">
+                <span>01 <i /> 01</span>
+                <span>Featured project</span>
+              </div>
+              <SupportIQPreview />
+              <div className="project-feature__visual-footer">
+                <span>Machine learning <i /> Customer analytics</span>
+                <span>PROJECT 01</span>
+              </div>
+            </div>
+
+            <div className="project-feature__details">
+              <p className="project-feature__category">
+                <span>01</span>
+                <span>Machine learning / Analytics</span>
+              </p>
+              <h3 className="project-feature__title" id="supportiq-title">
+                SupportIQ
+                <span>Customer Support Intelligence</span>
+              </h3>
+              <p className="project-feature__description">
+                An ML-powered customer support analytics application that processes support tickets, predicts ticket categories, analyzes sentiment and provides insights through an interactive dashboard.
+              </p>
+              <div className="project-feature__stack-wrap">
+                <span className="project-feature__stack-label">Built with</span>
+                <ul className="project-feature__stack" aria-label="Technologies used">
+                  {['Python', 'FastAPI', 'Streamlit', 'Scikit-learn', 'Pandas', 'TF-IDF', 'Logistic Regression'].map((technology) => (
+                    <li key={technology}>{technology}</li>
+                  ))}
+                </ul>
+              </div>
+              <a
+                className="project-feature__link"
+                href="https://github.com/siddharth0444/supportiq-customer-support-intelligence"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View repository <ArrowIcon diagonal />
+              </a>
+            </div>
+          </article>
+        </div>
+        <div className="projects-section__footer" aria-hidden="true">
+          <span>One project. A lot to learn from.</span>
+          <span>04 <i /> 04</span>
         </div>
       </section>
     </main>
