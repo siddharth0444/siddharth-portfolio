@@ -2,6 +2,13 @@ import './App.css'
 
 const githubUrl = 'https://github.com/siddharth0444'
 
+const learningAreas = [
+  { number: '01', name: 'Python', focus: 'Language' },
+  { number: '02', name: 'React', focus: 'Interfaces' },
+  { number: '03', name: 'AI applications', focus: 'Possibilities' },
+  { number: '04', name: 'Software engineering', focus: 'Foundations' },
+]
+
 function ArrowIcon({ diagonal = false }) {
   return (
     <svg
@@ -48,7 +55,7 @@ function App() {
             <span>Building with code.</span>
           </h1>
 
-          <div className="hero__bottom" id="about">
+          <div className="hero__bottom" id="hero-intro">
             <p className="hero__description">
               I’m Siddharth Rajak, an aspiring software developer exploring
               <span className="hero__topics"> Python, React, AI applications</span> and the craft of software engineering.
@@ -73,8 +80,51 @@ function App() {
         <footer className="hero__footer" aria-label="Page footer">
           <span>Always learning. Building steadily.</span>
           <a href="#about">Scroll to explore <span aria-hidden="true">↓</span></a>
-          <span className="hero__footer-index">01 <i /> 01</span>
+          <span className="hero__footer-index">01 <i /> 02</span>
         </footer>
+      </section>
+
+      <section className="about-section" id="about" aria-labelledby="about-title">
+        <div className="about-section__inner">
+          <div className="about-section__heading">
+            <p className="section-label"><span>02</span> / About me</p>
+            <h2 className="about-section__title" id="about-title">
+              Learning how <span>good software</span> comes together.
+            </h2>
+            <div className="about-section__copy">
+              <p>
+                I’m an aspiring software developer at the start of my learning journey, curious about how thoughtful ideas become useful applications.
+              </p>
+              <p>
+                I’m exploring Python, React, and AI applications while building a foundation in software engineering. I enjoy the balance of clear logic, considered interfaces, and the possibility of making technology more helpful.
+              </p>
+            </div>
+          </div>
+
+          <aside className="learning-map" aria-label="Areas I’m exploring">
+            <div className="learning-map__topline">
+              <span>Current curiosities</span>
+              <span className="learning-map__orbit" aria-hidden="true">
+                <i /><i /><i />
+              </span>
+            </div>
+            <ol className="learning-map__list">
+              {learningAreas.map((area) => (
+                <li className="learning-map__item" key={area.number}>
+                  <span className="learning-map__number">{area.number}</span>
+                  <span className="learning-map__name">{area.name}</span>
+                  <span className="learning-map__focus">{area.focus}</span>
+                  <span className="learning-map__arrow" aria-hidden="true">↗</span>
+                </li>
+              ))}
+            </ol>
+            <p className="learning-map__note"><span /> A work in progress, by design.</p>
+          </aside>
+        </div>
+        <div className="about-section__footer" aria-hidden="true">
+          <span>Curiosity → practice → understanding</span>
+          <span>02 <i /> 02</span>
+        </div>
       </section>
     </main>
   )
