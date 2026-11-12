@@ -1,6 +1,8 @@
 import './App.css'
 
 const githubUrl = 'https://github.com/siddharth0444'
+const linkedinUrl = 'REPLACE_WITH_LINKEDIN_PROFILE_URL'
+const linkedinConfigured = linkedinUrl.startsWith('https://www.linkedin.com/')
 
 const learningAreas = [
   { number: '01', name: 'Python', focus: 'Language' },
@@ -26,6 +28,37 @@ function ArrowIcon({ diagonal = false }) {
     >
       <path d="M3.5 10h12M10 4.5l5.5 5.5-5.5 5.5" />
     </svg>
+  )
+}
+
+function GitHubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1 1.54 1.01 1.54 1.01.99 1.69 2.59 1.2 3.22.92.1-.72.39-1.2.7-1.48-2.48-.28-5.08-1.24-5.08-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.6 5.24-5.09 5.52.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" />
+    </svg>
+  )
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.45 20.45h-3.55v-5.56c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92v5.66H9.39V9h3.41v1.56h.05c.47-.9 1.63-1.84 3.36-1.84 3.59 0 4.25 2.36 4.25 5.44v6.29ZM5.38 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.16 20.45H3.6V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
+    </svg>
+  )
+}
+
+function LinkedInLink({ className }) {
+  const content = <><LinkedInIcon /><span>LinkedIn</span>{!linkedinConfigured && <small>URL needed</small>}</>
+  const label = linkedinConfigured ? 'LinkedIn profile' : 'LinkedIn profile URL placeholder; replace linkedinUrl in App.jsx'
+
+  return linkedinConfigured ? (
+    <a className={className} href={linkedinUrl} target="_blank" rel="noreferrer" aria-label={label}>
+      {content}
+    </a>
+  ) : (
+    <span className={`${className} is-placeholder`} aria-label={label} title={label}>
+      {content}
+    </span>
   )
 }
 
@@ -116,7 +149,7 @@ function App() {
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
-            <a className="site-nav__contact" href={githubUrl} target="_blank" rel="noreferrer">
+            <a className="site-nav__contact" href="#contact">
               Contact <ArrowIcon diagonal />
             </a>
           </nav>
@@ -147,9 +180,7 @@ function App() {
               </a>
               <a className="text-link" href={githubUrl} target="_blank" rel="noreferrer">
                 <span className="github-mark" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1 1.54 1.01 1.54 1.01.99 1.69 2.59 1.2 3.22.92.1-.72.39-1.2.7-1.48-2.48-.28-5.08-1.24-5.08-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.6 5.24-5.09 5.52.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" />
-                  </svg>
+                  <GitHubIcon />
                 </span>
                 Find me on GitHub <ArrowIcon />
               </a>
@@ -160,7 +191,7 @@ function App() {
         <footer className="hero__footer" aria-label="Page footer">
           <span>Always learning. Building steadily.</span>
           <a href="#about">Scroll to explore <span aria-hidden="true">↓</span></a>
-          <span className="hero__footer-index">01 <i /> 04</span>
+          <span className="hero__footer-index">01 <i /> 05</span>
         </footer>
       </section>
 
@@ -203,7 +234,7 @@ function App() {
         </div>
         <div className="about-section__footer" aria-hidden="true">
           <span>Curiosity → practice → understanding</span>
-          <span>02 <i /> 04</span>
+          <span>02 <i /> 05</span>
         </div>
       </section>
 
@@ -241,7 +272,7 @@ function App() {
         </div>
         <div className="skills-section__footer" aria-hidden="true">
           <span>Learn it. Try it. Understand it.</span>
-          <span>03 <i /> 04</span>
+          <span>03 <i /> 05</span>
         </div>
       </section>
 
@@ -304,8 +335,67 @@ function App() {
         </div>
         <div className="projects-section__footer" aria-hidden="true">
           <span>One project. A lot to learn from.</span>
-          <span>04 <i /> 04</span>
+          <span>04 <i /> 05</span>
         </div>
+      </section>
+
+      <section className="contact-section" id="contact" aria-labelledby="contact-title">
+        <div className="contact-section__glow" aria-hidden="true" />
+        <div className="contact-section__inner">
+          <p className="section-label"><span>05</span> / Contact</p>
+          <div className="contact-section__status">
+            <span className="availability-dot" aria-hidden="true" />
+            <span>Open to opportunities</span>
+            <i aria-hidden="true">/</i>
+            <span>Currently learning &amp; building</span>
+          </div>
+
+          <div className="contact-section__main">
+            <div className="contact-section__copy">
+              <h2 className="contact-section__title" id="contact-title">
+                Have an idea?<br />
+                <span>Let’s build something.</span>
+              </h2>
+              <p className="contact-section__description">
+                I’m always interested in learning, collaborating, and exploring interesting ideas in technology. Feel free to reach out.
+              </p>
+              <a className="button contact-section__button" href={githubUrl} target="_blank" rel="noreferrer">
+                Get in touch <ArrowIcon diagonal />
+              </a>
+            </div>
+
+            <nav className="contact-section__socials" aria-label="Find Siddharth online">
+              <p>Elsewhere</p>
+              <a className="contact-social" href={githubUrl} target="_blank" rel="noreferrer">
+                <GitHubIcon />
+                <span>GitHub</span>
+                <small>@siddharth0444</small>
+                <ArrowIcon diagonal />
+              </a>
+              <LinkedInLink className="contact-social" />
+            </nav>
+          </div>
+        </div>
+
+        <footer className="site-footer">
+          <div className="site-footer__main">
+            <div className="site-footer__identity">
+              <a className="wordmark" href="#top" aria-label="Siddharth Rajak, back to top">
+                <span className="wordmark__mark">S<span>.</span></span>
+                <span className="wordmark__name">Siddharth Rajak</span>
+              </a>
+              <span className="site-footer__role">Software Developer</span>
+            </div>
+            <nav className="site-footer__links" aria-label="Footer links">
+              <a href={githubUrl} target="_blank" rel="noreferrer"><GitHubIcon /> GitHub</a>
+              <LinkedInLink className="site-footer__linkedin" />
+            </nav>
+          </div>
+          <div className="site-footer__bottom">
+            <span>Designed &amp; built with curiosity.</span>
+            <span>© {new Date().getFullYear()} Siddharth Rajak</span>
+          </div>
+        </footer>
       </section>
     </main>
   )
