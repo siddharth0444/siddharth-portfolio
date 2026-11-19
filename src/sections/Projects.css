@@ -1,0 +1,260 @@
+.projects {
+  padding: 0 48px 96px;
+}
+
+.projects__head {
+  margin-bottom: 64px;
+}
+
+.projects__margin {
+  margin: 0 0 4px 32px;
+  font-size: 22px;
+}
+
+.projects__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  font-size: clamp(32px, 4.6vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.projects__title .sticker {
+  transform: rotate(-4deg);
+}
+
+/* Stacked folder cards */
+.projects__stack {
+  display: grid;
+}
+
+.project {
+  --card: var(--ink);
+  --card-ink: #fff;
+  --card-soft: rgba(255, 255, 255, 0.72);
+  --tab: var(--blue);
+
+  position: relative;
+  z-index: calc(var(--i) + 1);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 40px;
+  padding: 48px 40px 64px;
+  color: var(--card-ink);
+  background: var(--card);
+}
+
+.project + .project {
+  margin-top: -16px;
+}
+
+.project--yellow {
+  --card: var(--yellow);
+  --card-ink: var(--ink);
+  --card-soft: rgba(29, 27, 25, 0.75);
+  --tab: var(--yellow);
+}
+
+.project--blue {
+  --card: var(--blue);
+  --card-soft: rgba(255, 255, 255, 0.8);
+  --tab: var(--blue);
+}
+
+.project__tab {
+  position: absolute;
+  bottom: 100%;
+  left: calc(var(--i) * 30%);
+  padding: 14px 44px 12px 22px;
+  color: var(--card-ink);
+  background: var(--card);
+  clip-path: polygon(0 0, calc(100% - 32px) 0, 100% 100%, 0 100%);
+}
+
+.project--dark .project__tab {
+  background: var(--tab);
+  color: #fff;
+}
+
+.project__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 10.5px;
+}
+
+.project__status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.project__title {
+  margin: 14px 0 12px;
+  font-size: clamp(34px, 4.4vw, 52px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.project__tagline {
+  max-width: 460px;
+  margin: 0;
+  color: var(--card-soft);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.project__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project__metrics li {
+  padding: 6px 10px;
+  border: 1.5px solid currentColor;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project__note {
+  margin: 14px 0 0;
+  color: var(--card-soft);
+  font-family: var(--hand);
+  font-size: 19px;
+}
+
+.project__stack {
+  margin: 20px 0 0;
+  color: var(--card-soft);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.project__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid currentColor;
+  text-decoration: none;
+  transition: gap 0.15s ease;
+}
+
+.project__links a:hover {
+  gap: 10px;
+}
+
+/* Taped visual */
+.project__visual {
+  position: relative;
+  align-self: center;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.6);
+  transform: rotate(0.8deg);
+}
+
+.project:nth-child(even) .project__visual {
+  transform: rotate(-0.8deg);
+}
+
+.project__visual .tape--left { background: rgba(220, 220, 220, 0.85); }
+.project__visual .tape--right { background: rgba(220, 220, 220, 0.85); }
+
+/* Illustrative SupportIQ triage list */
+.tickets {
+  color: var(--ink);
+  background: #fbfaf6;
+  font-size: 14px;
+}
+
+.tickets__bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1.5px solid var(--rule);
+  font-size: 10px;
+}
+
+.tickets__tag {
+  color: var(--ink-soft);
+}
+
+.tickets__row {
+  padding: 14px;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.tickets__row p {
+  margin: 0 0 8px;
+}
+
+.tickets__labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tickets__labels span {
+  padding: 3px 8px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tickets__labels .tickets__urgent {
+  color: #fff;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+@media (max-width: 900px) {
+  .projects {
+    padding: 0 16px 72px;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 36px 20px 48px;
+  }
+
+  .project + .project {
+    margin-top: 44px;
+  }
+
+  .project__tab {
+    left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .projects__margin {
+    margin-left: 0;
+  }
+
+  .projects__head {
+    margin-bottom: 56px;
+  }
+}
