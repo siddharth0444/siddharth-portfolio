@@ -46,11 +46,9 @@ export default function Hero() {
       </div>
 
       <p className="hero__headline">
-        I turn messy data into models
-        <span className="hero__icon hero__icon--target" aria-hidden="true" />
+        I turn messy data into <span className="nowrap">models<span className="hero__icon hero__icon--target" aria-hidden="true" /></span>{' '}
         <br />
-        people can actually use.
-        <span className="hero__icon hero__icon--flower" aria-hidden="true">✿</span>
+        people can actually <span className="nowrap">use.<span className="hero__icon hero__icon--flower" aria-hidden="true">✿</span></span>
       </p>
 
       <p className="hero__sub">
