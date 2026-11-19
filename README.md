@@ -1,16 +1,30 @@
-# React + Vite
+# Siddharth Rajak — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio for my Data Science and Machine Learning work. It's a single-page React app styled like a notebook page, with sticky notes, taped polaroids and stacked folder-tab project cards.
 
-Currently, two official plugins are available:
+## What's on the page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Hero:** who I am, what I do, and the roles I'm open to.
+- **About:** a short intro, real charts from my projects, and the tools I use.
+- **Projects:** each card has its key result metrics, a chart from the project's own analysis, and links to the code and live demo.
+  - Credit Risk Scorer
+  - India Air Quality Analysis
+  - SupportIQ
+- **Contact:** email, LinkedIn and GitHub.
 
-## React Compiler
+## Tech
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React 19, Vite and plain CSS (one stylesheet per section). Fonts come from Google Fonts: Pixelify Sans, Space Grotesk, JetBrains Mono and Caveat.
 
-## Expanding the Oxlint configuration
+## Run locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm install
+npm run dev      # start the dev server
+npm run build    # production build in dist/
+npm run lint     # oxlint
+```
+
+## Editing content
+
+All the text lives in `src/data.js`: links, project details, metrics and skills. Project charts are in `src/assets/figures/`.
