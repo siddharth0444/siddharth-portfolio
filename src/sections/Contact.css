@@ -1,0 +1,113 @@
+.contact {
+  padding: 32px 48px 0;
+}
+
+.contact__card {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  border: 2px solid var(--line);
+  background: #fff;
+  box-shadow: 6px 6px 0 var(--line);
+  text-align: center;
+  transform: rotate(-0.6deg);
+}
+
+.contact__card .tape--left { background: var(--mint); }
+.contact__card .tape--right { background: #ffb3cd; }
+
+.contact__hello {
+  margin: 0;
+  font-size: 22px;
+}
+
+.contact__title {
+  margin: 8px 0 0;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.contact__title span {
+  padding: 0 6px;
+  background: linear-gradient(transparent 55%, var(--yellow) 55%);
+}
+
+.contact__text {
+  max-width: 500px;
+  margin: 18px auto 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact__mail {
+  margin-top: 28px;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.contact__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.contact__links a:first-child { transform: rotate(-3deg); }
+.contact__links a:last-child { transform: rotate(3deg); }
+.contact__links a:hover { transform: rotate(0) translateY(-2px); }
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 80px;
+  padding: 20px 0 24px;
+  border-top: 1.5px solid var(--line);
+  font-size: 10.5px;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .contact {
+    padding: 16px 16px 0;
+  }
+
+  .contact__card {
+    padding: 40px 18px;
+    box-shadow: 4px 4px 0 var(--line);
+    transform: none;
+  }
+
+  .contact__mail {
+    max-width: 100%;
+    padding: 12px;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  .footer {
+    justify-content: center;
+    text-align: center;
+  }
+}
