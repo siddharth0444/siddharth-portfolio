@@ -1,0 +1,139 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 56px;
+  padding: 0 16px;
+  background: #fbfaf6;
+  border-bottom: 1.5px solid var(--rule);
+}
+
+.nav__logo {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  font-family: var(--display);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.nav__links {
+  display: flex;
+  align-self: stretch;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav__links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__links a {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.15s ease;
+}
+
+.nav__links a span {
+  font-size: 10px;
+}
+
+.nav__links a:hover {
+  background: var(--rule);
+}
+
+.nav__links a.is-active {
+  background: var(--yellow);
+}
+
+.nav__social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.nav__dot {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+}
+
+.nav__dot:hover {
+  transform: translateY(-2px) rotate(-8deg);
+}
+
+.nav__dot--yellow { background: var(--yellow); }
+.nav__dot--pink { background: var(--pink); color: #fff; }
+.nav__dot--green { background: var(--green); color: #fff; }
+
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 4px;
+  padding: 7px 14px;
+  border: 2px solid var(--line);
+  background: #fff;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.nav__cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 var(--line);
+}
+
+@media (max-width: 860px) {
+  .nav__dot {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .nav__links a {
+    padding: 0 10px;
+  }
+
+  .nav__links a span,
+  .nav__cta span {
+    display: none;
+  }
+
+  .nav__cta {
+    padding: 7px 10px;
+  }
+}

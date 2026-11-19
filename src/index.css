@@ -1,18 +1,33 @@
 :root {
-  --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --heading: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --ink: #1d1b19;
+  --ink-soft: #57534e;
+  --paper: #f6f4ee;
+  --rule: #e4e0d6;
+  --line: #1d1b19;
+  --frame: #8d8d8d;
+  --frame-grid: #a3a3a3;
+
+  --yellow: #f2c23a;
+  --mint: #a7e3c9;
+  --green: #22b35e;
+  --pink: #ff5c93;
+  --blue: #2f54eb;
+  --red: #e2552d;
+
+  --display: 'Pixelify Sans', 'Courier New', monospace;
+  --sans: 'Space Grotesk', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  --hand: 'Caveat', 'Comic Sans MS', cursive;
+
+  --shadow: 0 1px 0 rgba(29, 27, 25, 0.08), 0 10px 24px -14px rgba(29, 27, 25, 0.45);
 
   font-family: var(--sans);
-  color: #f2f1ec;
-  background: #10110f;
+  color: var(--ink);
+  background: var(--frame);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  font-optical-sizing: auto;
-  font-weight: 400;
 }
 
 * {
@@ -21,37 +36,153 @@
 
 html {
   min-width: 320px;
-  min-height: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  background-color: var(--frame);
+  background-image:
+    linear-gradient(var(--frame-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--frame-grid) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-body,
-button,
-a {
-  font-family: var(--sans);
+img {
+  display: block;
+  max-width: 100%;
 }
 
-button,
 a {
+  color: inherit;
   -webkit-tap-highlight-color: transparent;
 }
 
-a:focus-visible {
-  outline: 2px solid #c7f36b;
-  outline-offset: 4px;
-}
-
-#root {
-  min-height: 100vh;
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
 }
 
 ::selection {
-  color: #10110f;
-  background: #c7f36b;
+  color: var(--ink);
+  background: var(--yellow);
+}
+
+/* The notebook page the whole site sits on */
+.page {
+  position: relative;
+  width: min(1180px, calc(100% - 64px));
+  margin: 32px auto;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    var(--rule) 31px,
+    var(--rule) 32px
+  );
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+/* Shared small pieces */
+.mono-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hand {
+  font-family: var(--hand);
+  font-weight: 500;
+}
+
+.sticker {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 0 var(--line);
+}
+
+.note {
+  display: inline-block;
+  padding: 8px 12px;
+  font-family: var(--hand);
+  font-size: 20px;
+  line-height: 1;
+  box-shadow: var(--shadow);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 2px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--line);
+}
+
+.button--dark {
+  color: #fff;
+  background: var(--ink);
+}
+
+.button--dark .button__icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  background: var(--blue);
+}
+
+.button--light {
+  background: #fff;
+}
+
+@media (max-width: 720px) {
+  body {
+    background-size: 32px 32px;
+  }
+
+  .page {
+    width: calc(100% - 24px);
+    margin: 12px auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
