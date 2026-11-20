@@ -8,6 +8,7 @@ export const navItems = [
   { label: 'Home', href: '#top', icon: '★' },
   { label: 'About', href: '#about', icon: '●' },
   { label: 'Projects', href: '#projects', icon: '▦' },
+  { label: 'Education', href: '#education', icon: '✎' },
   { label: 'Contact', href: '#contact', icon: '◆' },
 ]
 
@@ -63,4 +64,46 @@ export const skills = [
   { name: 'NLP (TF-IDF)', icon: '💬', color: 'mint' },
   { name: 'FastAPI & Streamlit', icon: '⚡', color: 'yellow' },
   { name: 'pytest & CI', icon: '✅', color: 'green', dark: true },
+]
+
+export const education = {
+  degree: 'BTech',
+  field: 'Computer Science and Engineering',
+  school: 'Jaipur Engineering College and Research Centre (JECRC)',
+  place: 'Jaipur, Rajasthan',
+  years: '2022 – 2026',
+}
+
+export const certifications = [
+  {
+    issuer: 'Oracle',
+    title: 'OCI 2025 Certified Data Science Professional',
+    date: 'Sep 2025',
+    color: 'red',
+  },
+  {
+    issuer: 'Oracle',
+    title: 'OCI 2025 Certified Generative AI Professional',
+    date: 'Sep 2025',
+    color: 'red',
+  },
+  {
+    issuer: 'Oracle',
+    title: 'OCI 2025 Certified AI Foundations Associate',
+    date: '2025',
+    color: 'red',
+  },
+  {
+    issuer: 'IBM SkillsBuild',
+    title: 'Machine Learning for Data Science Projects',
+    date: 'Jul 2025',
+    color: 'blue',
+    verify: 'https://www.credly.com/badges/7d33fb5d-3f29-4bfd-903e-f510fd41137f',
+  },
+  {
+    issuer: 'McKinsey.org',
+    title: 'Forward Program: problem solving, communication and digital skills',
+    date: 'Dec 2025',
+    color: 'green',
+  },
 ]

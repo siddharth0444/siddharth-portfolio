@@ -1,0 +1,157 @@
+.education {
+  padding: 0 48px 96px;
+}
+
+.education__head {
+  margin-bottom: 48px;
+}
+
+.education__margin {
+  margin: 0 0 4px 32px;
+  font-size: 22px;
+}
+
+.education__title {
+  margin: 0;
+  font-size: clamp(32px, 4.6vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.education__amp {
+  font-family: var(--hand);
+  font-weight: 700;
+  margin-right: 0.12em;
+  color: var(--pink);
+}
+
+.education__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+  gap: 48px;
+  align-items: start;
+}
+
+/* Degree: a taped index card */
+.degree {
+  position: relative;
+  padding: 36px 32px 32px;
+  border: 2px solid var(--line);
+  background: #fff;
+  box-shadow: 6px 6px 0 var(--line);
+  transform: rotate(-1deg);
+}
+
+.degree .tape--left { background: var(--mint); }
+.degree .tape--right { background: #ffb3cd; }
+
+.degree__years {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 10px;
+  background: var(--yellow);
+}
+
+.degree__title {
+  margin: 18px 0 0;
+  font-family: var(--display);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.degree__field {
+  margin: 8px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.degree__school {
+  margin: 16px 0 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.degree__place {
+  margin: 10px 0 0;
+  font-size: 20px;
+}
+
+/* Certifications */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cert {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 18px 16px;
+  border: 1.5px solid var(--line);
+  border-left: 8px solid var(--accent);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.cert:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.cert__issuer {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 10.5px;
+}
+
+.cert__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.cert__verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 4px;
+  font-size: 10.5px;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .education__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .degree {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 560px) {
+  .education {
+    padding: 0 20px 72px;
+  }
+
+  .education__margin {
+    margin-left: 8px;
+  }
+
+  .certs {
+    grid-template-columns: 1fr;
+  }
+
+  .degree {
+    padding: 32px 22px 24px;
+  }
+}
