@@ -42,8 +42,8 @@ export default function About() {
         <Polaroid
           side="right"
           src={diwaliFigure}
-          alt="Hourly pollution profiles around Diwali compared with a two-sided seasonal baseline"
-          caption="diwali, hour by hour"
+          alt="Daily PM2.5 from 7 days before to 7 days after Diwali, relative to a two-sided local baseline, for North and South Indian cities"
+          caption="diwali, day by day"
         />
       </div>
 
