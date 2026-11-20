@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="hero__notes">
           <span className="note hero__note" style={{ background: 'var(--yellow)' }}>Data Scientist</span>
           <span className="mono-label hero__status">
-            <i aria-hidden="true" /> Open to entry-level DS / ML roles
+            <i aria-hidden="true" /> Open to DS / ML roles
           </span>
           <span className="note hero__note hero__note--tilt" style={{ background: 'var(--mint)' }}>Jaipur, IN</span>
         </div>

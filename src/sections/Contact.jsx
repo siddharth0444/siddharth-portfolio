@@ -17,7 +17,7 @@ export default function Contact() {
           <span>Let’s talk.</span>
         </h2>
         <p className="contact__text">
-          I’m looking for entry-level Data Scientist and ML Engineer roles where I can work on real data with an experienced team. Available to start immediately.
+          I’m looking for Data Scientist and ML Engineer roles where I can work on real data with an experienced team. Available to start immediately.
         </p>
 
         <a className="button button--dark contact__mail" href={`mailto:${links.email}`}>
