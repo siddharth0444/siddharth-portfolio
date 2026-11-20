@@ -59,6 +59,16 @@
   text-transform: uppercase;
 }
 
+.hero__surname {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.34em;
+  letter-spacing: 0.42em;
+  /* Offset the trailing letter-spacing so the word stays centred */
+  margin-right: -0.42em;
+  color: var(--ink-soft);
+}
+
 .hero__arrow {
   position: absolute;
   bottom: -26px;

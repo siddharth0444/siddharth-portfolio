@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="hero__box">
           <h1 className="hero__name" id="hero-name">
             Siddharth
-            <span className="visually-hidden"> Rajak</span>
+            <span className="hero__surname"> Rajak</span>
           </h1>
           <svg className="hero__arrow hero__arrow--left" viewBox="0 0 40 30" aria-hidden="true">
             <path d="M2 28 C 14 26, 26 18, 36 4 M28 5 l8 -1 l-1 8" />
